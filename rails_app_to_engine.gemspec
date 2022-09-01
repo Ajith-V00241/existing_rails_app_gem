@@ -1,7 +1,13 @@
-$:.push File.expand_path("apps/lib", __dir__)
+$:.push File.expand_path("#{ __dir__}/apps/rails_app_to_engine_api/lib")
+
+# puts File.expand_path("#{ __dir__}/apps/rails_app_to_engine_api/lib")
+
+
+# require_relative "apps/rails_app_to_engine_api/lib/rails_app_to_engine_api/engine"
+# Dir.glob("apps/rails_app_to_engine_api/{app,config,db,lib}/**/*").each {|file| require file }
 
 # Maintain your gem's version:
-require "rails_app_to_engine/version"
+require_relative "apps/rails_app_to_engine_api/lib/rails_app_to_engine_api/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |spec|
@@ -23,7 +29,7 @@ Gem::Specification.new do |spec|
       "public gem pushes."
   end
 
-  spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  spec.files = Dir["./apps/rails_app_to_engine_api/{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   spec.add_dependency "rails", "~> 6.0.5", ">= 6.0.5.1"
   spec.add_dependency "pg"
