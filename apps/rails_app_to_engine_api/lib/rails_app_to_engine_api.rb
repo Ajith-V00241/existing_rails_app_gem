@@ -1,0 +1,3 @@
+require 'rails_app_to_engine_api/engine'
+module RailsAppToEngineApi
+end
